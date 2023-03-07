@@ -19,6 +19,7 @@
 		9378F7B029B4C9AE003F15AE /* SetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9378F7AF29B4C9AE003F15AE /* SetController.swift */; };
 		9378F7B229B4DD58003F15AE /* Dictionary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9378F7B129B4DD58003F15AE /* Dictionary.storyboard */; };
 		9378F7B429B4DD76003F15AE /* DictionaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9378F7B329B4DD76003F15AE /* DictionaryController.swift */; };
+		93D8FB3629B6615F002D4094 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D8FB3529B6615F002D4094 /* Contact.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		9378F7AF29B4C9AE003F15AE /* SetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetController.swift; sourceTree = "<group>"; };
 		9378F7B129B4DD58003F15AE /* Dictionary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dictionary.storyboard; sourceTree = "<group>"; };
 		9378F7B329B4DD76003F15AE /* DictionaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryController.swift; sourceTree = "<group>"; };
+		93D8FB3529B6615F002D4094 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			children = (
 				9378F7B129B4DD58003F15AE /* Dictionary.storyboard */,
 				9378F7B329B4DD76003F15AE /* DictionaryController.swift */,
+				93D8FB3529B6615F002D4094 /* Contact.swift */,
 				9356AB9429B24CE300B7D132 /* AppDelegate.swift */,
 				9356AB9629B24CE300B7D132 /* SceneDelegate.swift */,
 				9378F7AD29B4C99F003F15AE /* Set.storyboard */,
@@ -181,6 +184,7 @@
 				9356AB9529B24CE300B7D132 /* AppDelegate.swift in Sources */,
 				9356AB9729B24CE300B7D132 /* SceneDelegate.swift in Sources */,
 				9378F7B029B4C9AE003F15AE /* SetController.swift in Sources */,
+				93D8FB3629B6615F002D4094 /* Contact.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

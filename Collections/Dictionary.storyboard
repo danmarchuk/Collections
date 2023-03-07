@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="K2d-YW-rMM">
-                                <rect key="frame" x="0.0" y="59" width="394" height="759"/>
+                                <rect key="frame" x="1" y="59" width="394" height="759"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="140" translatesAutoresizingMaskIntoConstraints="NO" id="nCp-yi-s7D">
                                         <rect key="frame" x="67.666666666666657" y="0.0" width="258.66666666666674" height="50"/>
@@ -60,6 +60,9 @@
                                                                         <color key="strokeColor" systemColor="opaqueSeparatorColor"/>
                                                                     </backgroundConfiguration>
                                                                 </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="arrFindFirstCon:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="g34-Xf-QK4"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBQ-qm-NCa">
                                                                 <rect key="frame" x="0.0" y="100" width="197" height="100"/>
@@ -73,6 +76,9 @@
                                                                         <color key="strokeColor" systemColor="opaqueSeparatorColor"/>
                                                                     </backgroundConfiguration>
                                                                 </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="arrFindLastCon:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Na1-tp-bHb"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTd-SF-4Y9">
                                                                 <rect key="frame" x="0.0" y="200" width="197" height="100"/>
@@ -86,6 +92,9 @@
                                                                         <color key="strokeColor" systemColor="opaqueSeparatorColor"/>
                                                                     </backgroundConfiguration>
                                                                 </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="arrSearchNonExist:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="yOY-Xl-4da"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -104,6 +113,9 @@
                                                                         <color key="strokeColor" systemColor="opaqueSeparatorColor"/>
                                                                     </backgroundConfiguration>
                                                                 </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="dictFindFirst:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="G2b-6x-sjf"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fwl-Kc-xYb">
                                                                 <rect key="frame" x="0.0" y="100" width="197" height="100"/>
@@ -117,6 +129,9 @@
                                                                         <color key="strokeColor" systemColor="opaqueSeparatorColor"/>
                                                                     </backgroundConfiguration>
                                                                 </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="dictFindLast:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="EPY-gf-v13"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fcj-og-ZOV">
                                                                 <rect key="frame" x="0.0" y="200" width="197" height="100"/>
@@ -130,6 +145,9 @@
                                                                         <color key="strokeColor" systemColor="opaqueSeparatorColor"/>
                                                                     </backgroundConfiguration>
                                                                 </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="dictSearchNonExist:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Kxc-RP-i1K"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -149,7 +167,7 @@
                         <constraints>
                             <constraint firstItem="K2d-YW-rMM" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="2q0-Lg-H57"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="K2d-YW-rMM" secondAttribute="bottom" id="82X-Oc-5Cd"/>
-                            <constraint firstItem="K2d-YW-rMM" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="Agq-ck-hca"/>
+                            <constraint firstItem="K2d-YW-rMM" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="1" id="Agq-ck-hca"/>
                             <constraint firstItem="K2d-YW-rMM" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="QXy-p5-Eoj"/>
                         </constraints>
                     </view>

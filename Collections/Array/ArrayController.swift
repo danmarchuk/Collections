@@ -15,6 +15,8 @@ class ArrayController: UIViewController {
         stackViewWithArrayManipulationButtons.isHidden = true
     }
     
+    var manager = Manager()
+    
     var intArray: [Int] = []
     var time: Double = 0.0
     let oneThousandElements = Array(0...999)
@@ -35,7 +37,7 @@ class ArrayController: UIViewController {
             // Get the end time
             let end = DispatchTime.now()
             // Calculate the execution time
-            self.time = self.calculateExecutionTime(end: end, start: start)
+            self.time = self.manager.calculateExecutionTime(end: end, start: start)
             // Switch back to the main thread to update the UI
             DispatchQueue.main.async {
                 sender.setTitle("Array creation time: \(self.time) ms.", for: .normal)
@@ -63,12 +65,7 @@ class ArrayController: UIViewController {
             for element in self.oneThousandElements {
                 self.intArray.insert(element, at: 0)
             }
-            // Get the end time
-            let end = DispatchTime.now()
-            // Calculate the execution time
-            self.time = self.calculateExecutionTime(end: end, start: start)
-            // Switch back to the main thread to update the UI
-            self.dispatch(sender: sender, activityIndicator: activityIndicator)
+            self.endTime(start: start, sender: sender, activityIndicator: activityIndicator)
         }
     }
     @IBAction func insertAtTheBeginning(_ sender: UIButton) {
@@ -83,12 +80,7 @@ class ArrayController: UIViewController {
             // insert elements at the beginning
             self.intArray.insert(contentsOf: self.oneThousandElements, at: 0)
             
-            // Get the end time
-            let end = DispatchTime.now()
-            // Calculate the execution time
-            self.time = self.calculateExecutionTime(end: end, start: start)
-            // Switch back to the main thread to update the UI
-            self.dispatch(sender: sender, activityIndicator: activityIndicator)
+            self.endTime(start: start, sender: sender, activityIndicator: activityIndicator)
         }
     }
     
@@ -97,7 +89,6 @@ class ArrayController: UIViewController {
         buttonDisabled(sender: sender)
         let activityIndicator = showActivityIndicator(sender: sender)
         
-        
         DispatchQueue.global(qos: .userInitiated).async {
             // Get the start time
             let start = DispatchTime.now()
@@ -105,12 +96,7 @@ class ArrayController: UIViewController {
             for (index, element) in self.oneThousandElements.enumerated() {
                 self.intArray.insert(element, at: self.middleIndex + index)
             }
-            // Get the end time
-            let end = DispatchTime.now()
-            // Calculate the execution time
-            self.time = self.calculateExecutionTime(end: end, start: start)
-            // Switch back to the main thread to update the UI
-            self.dispatch(sender: sender, activityIndicator: activityIndicator)
+            self.endTime(start: start, sender: sender, activityIndicator: activityIndicator)
         }
         
     }
@@ -126,12 +112,7 @@ class ArrayController: UIViewController {
             // insert elements at the beginning
             self.intArray.insert(contentsOf: self.oneThousandElements, at: self.middleIndex)
             
-            // Get the end time
-            let end = DispatchTime.now()
-            // Calculate the execution time
-            self.time = self.calculateExecutionTime(end: end, start: start)
-            // Switch back to the main thread to update the UI
-            self.dispatch(sender: sender, activityIndicator: activityIndicator)
+            self.endTime(start: start, sender: sender, activityIndicator: activityIndicator)
         }
     }
 
@@ -150,12 +131,7 @@ class ArrayController: UIViewController {
             for element in self.oneThousandElements {
                 self.intArray.insert(element, at: self.endIndex)
             }
-            // Get the end time
-            let end = DispatchTime.now()
-            // Calculate the execution time
-            self.time = self.calculateExecutionTime(end: end, start: start)
-            // Switch back to the main thread to update the UI
-            self.dispatch(sender: sender, activityIndicator: activityIndicator)
+            self.endTime(start: start, sender: sender, activityIndicator: activityIndicator)
         }
     }
     
@@ -170,11 +146,7 @@ class ArrayController: UIViewController {
             // insert the elements at the end
             self.intArray.insert(contentsOf: self.oneThousandElements, at: self.endIndex)
             // Get the end time
-            let end = DispatchTime.now()
-            // Calculate the execution time
-            self.time = self.calculateExecutionTime(end: end, start: start)
-            // Switch back to the main thread to update the UI
-            self.dispatch(sender: sender, activityIndicator: activityIndicator)
+            self.endTime(start: start, sender: sender, activityIndicator: activityIndicator)
         }
     }
     
@@ -195,7 +167,7 @@ class ArrayController: UIViewController {
             // Get the end time
             let end = DispatchTime.now()
             // Calculate the execution time
-            self.time = self.calculateExecutionTime(end: end, start: start)
+            self.time = self.manager.calculateExecutionTime(end: end, start: start)
             // Switch back to the main thread to update the UI
             self.dispatchForRemoval(sender: sender, activityIndicator: activityIndicator)
         }
@@ -215,7 +187,7 @@ class ArrayController: UIViewController {
             // Get the end time
             let end = DispatchTime.now()
             // Calculate the execution time
-            self.time = self.calculateExecutionTime(end: end, start: start)
+            self.time = self.manager.calculateExecutionTime(end: end, start: start)
             // Switch back to the main thread to update the UI
             self.dispatchForRemoval(sender: sender, activityIndicator: activityIndicator)
         }
@@ -239,7 +211,7 @@ class ArrayController: UIViewController {
             // Get the end time
             let end = DispatchTime.now()
             // Calculate the execution time
-            self.time = self.calculateExecutionTime(end: end, start: start)
+            self.time = self.manager.calculateExecutionTime(end: end, start: start)
             // Switch back to the main thread to update the UI
             self.dispatchForRemoval(sender: sender, activityIndicator: activityIndicator)
         }
@@ -258,7 +230,7 @@ class ArrayController: UIViewController {
             // Get the end time
             let end = DispatchTime.now()
             // Calculate the execution time
-            self.time = self.calculateExecutionTime(end: end, start: start)
+            self.time = self.manager.calculateExecutionTime(end: end, start: start)
             // Switch back to the main thread to update the UI
             self.dispatchForRemoval(sender: sender, activityIndicator: activityIndicator)
         }
@@ -281,7 +253,7 @@ class ArrayController: UIViewController {
             // Get the end time
             let end = DispatchTime.now()
             // Calculate the execution time
-            self.time = self.calculateExecutionTime(end: end, start: start)
+            self.time = self.manager.calculateExecutionTime(end: end, start: start)
             // Switch back to the main thread to update the UI
             self.dispatchForRemoval(sender: sender, activityIndicator: activityIndicator)
         }
@@ -300,14 +272,12 @@ class ArrayController: UIViewController {
             // Get the end time
             let end = DispatchTime.now()
             // Calculate the execution time
-            self.time = self.calculateExecutionTime(end: end, start: start)
+            self.time = self.manager.calculateExecutionTime(end: end, start: start)
             // Switch back to the main thread to update the UI
             self.dispatchForRemoval(sender: sender, activityIndicator: activityIndicator)
         }
         
     }
-    
-    
     
     
     func showActivityIndicator (sender: UIButton) -> UIActivityIndicatorView {
@@ -324,11 +294,6 @@ class ArrayController: UIViewController {
         return activityIndicator
     }
     
-    func calculateExecutionTime(end: DispatchTime, start: DispatchTime) -> Double {
-        let executionTime = Double(end.uptimeNanoseconds - start.uptimeNanoseconds) / 1_000_000_000
-        let roundedTime = round(executionTime * 1000) / 1000.0
-        return roundedTime
-    }
     
     func dispatch(sender: UIButton, activityIndicator: UIActivityIndicatorView) {
         DispatchQueue.main.async {
@@ -348,6 +313,16 @@ class ArrayController: UIViewController {
             // Enable the button
             sender.isEnabled = true
         }
+    }
+    
+    func endTime(start: DispatchTime, sender: UIButton, activityIndicator: UIActivityIndicatorView) {
+        // Get the end time
+        let end = DispatchTime.now()
+        // Calculate the execution time
+        self.time = self.manager.calculateExecutionTime(end: end, start: start)
+        // Switch back to the main thread to update the UI
+        self.dispatch(sender: sender, activityIndicator: activityIndicator)
+        
     }
     
     func buttonDisabled(sender: UIButton) {

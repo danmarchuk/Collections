@@ -10,6 +10,7 @@ import UIKit
 class DictionaryController: UIViewController {
     var contactArray: [Contact] = []
     var contactDict: [String:String] = [:]
+    var manager = Manager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,7 +79,7 @@ class DictionaryController: UIViewController {
             
             let end = DispatchTime.now()
             
-            let time = self.calculateExecutionTime(end: end, start: start)
+            let time = self.manager.calculateExecutionTime(end: end, start: start)
             
             DispatchQueue.main.async {
                 sender.setTitle("First element search time: \(time) ms. Result number: 0", for: .normal)
@@ -98,7 +99,7 @@ class DictionaryController: UIViewController {
             
             let end = DispatchTime.now()
             
-            let time = self.calculateExecutionTime(end: end, start: start)
+            let time = self.manager.calculateExecutionTime(end: end, start: start)
             
             DispatchQueue.main.async {
                 sender.setTitle("Last element search time: \(time) ms. Result number: \(lastIndex)", for: .normal)
@@ -122,7 +123,7 @@ class DictionaryController: UIViewController {
             
             let end = DispatchTime.now()
             
-            let time = self.calculateExecutionTime(end: end, start: start)
+            let time = self.manager.calculateExecutionTime(end: end, start: start)
             
             DispatchQueue.main.async {
                 sender.setTitle("Non-existing element search time: \(time) ms. Result number: 10 000 001", for: .normal)
@@ -148,7 +149,7 @@ class DictionaryController: UIViewController {
             
             let end = DispatchTime.now()
             
-            let time = self.calculateExecutionTime(end: end, start: start)
+            let time = self.manager.calculateExecutionTime(end: end, start: start)
             
             DispatchQueue.main.async {
                 sender.setTitle("First element search time: \(time) ms. First key: \(firstKey), first value: \(firstVal)", for: .normal)
@@ -174,7 +175,7 @@ class DictionaryController: UIViewController {
             
             let end = DispatchTime.now()
             
-            let time = self.calculateExecutionTime(end: end, start: start)
+            let time = self.manager.calculateExecutionTime(end: end, start: start)
             
             DispatchQueue.main.async {
                 sender.setTitle("Last element search time: \(time) ms. Last key: \(lastKey), last value: \(lastVal)", for: .normal)
@@ -197,7 +198,7 @@ class DictionaryController: UIViewController {
             
             let end = DispatchTime.now()
             
-            let time = self.calculateExecutionTime(end: end, start: start)
+            let time = self.manager.calculateExecutionTime(end: end, start: start)
             
             DispatchQueue.main.async {
                 sender.setTitle("Non-existing element search time: \(time) ms. )", for: .normal)
@@ -207,10 +208,6 @@ class DictionaryController: UIViewController {
     }
     
     
-    func calculateExecutionTime(end: DispatchTime, start: DispatchTime) -> Double {
-        let executionTime = Double(end.uptimeNanoseconds - start.uptimeNanoseconds) / 1_000_000_000
-        let roundedTime = round(executionTime * 1000) / 1000.0
-        return roundedTime
-    }
+
     
 }

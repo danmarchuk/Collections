@@ -8,6 +8,7 @@
 import UIKit
 
 class SetController: UIViewController {
+    var manager = Manager()
     
     
     override func viewDidLoad() {
@@ -44,7 +45,7 @@ class SetController: UIViewController {
         var notmatchingChars = ""
         if let firstText = firstTextField.text {
             if let secondText = secondTextField.text {
-                notmatchingChars = unmatchedCharacters(string1: firstText, string2: secondText)
+                notmatchingChars = manager.unmatchedCharacters(string1: firstText, string2: secondText)
             }
             
         }
@@ -60,7 +61,7 @@ class SetController: UIViewController {
         var notmatchingChars = ""
         if let firstText = firstTextField.text {
             if let secondText = secondTextField.text {
-                notmatchingChars = uniqueChars(string1: firstText, string2: secondText)
+                notmatchingChars = manager.uniqueChars(string1: firstText, string2: secondText)
             }
             
         }
@@ -70,43 +71,9 @@ class SetController: UIViewController {
     
     @IBOutlet weak var uniqueCharsLabel: UILabel!
     
+
     
-    func uniqueChars(string1: String, string2: String) -> String {
 
-        var nonMatchingChars = ""
-
-        for (index, char) in string1.enumerated() {
-            if index >= string2.count || char != string2[string2.index(string2.startIndex, offsetBy: index)] {
-                nonMatchingChars.append(char)
-            }
-        }
-
-        if string2.count > string1.count {
-            nonMatchingChars.append(String(string2[string2.index(string2.startIndex, offsetBy: string1.count)...]))
-        }
-
-        return nonMatchingChars
-    }
-    
-    func unmatchedCharacters(string1: String, string2: String) -> String {
-        var unmatchedCharacters: String = ""
-        let minLength = min(string1.count, string2.count)
-        
-        for i in 0..<minLength {
-            let char1 = string1[string1.index(string1.startIndex, offsetBy: i)]
-            let char2 = string2[string2.index(string2.startIndex, offsetBy: i)]
-            if char1 != char2 {
-                unmatchedCharacters.append(char1)
-                unmatchedCharacters.append(char2)
-            }
-        }
-        
-        var remainingChars1 = string1.dropFirst(minLength)
-        var remainingChars2 = string2.dropFirst(minLength)
-        unmatchedCharacters.append(contentsOf: remainingChars1)
-        unmatchedCharacters.append(contentsOf: remainingChars2)
-        return unmatchedCharacters
-    }
    
 
 

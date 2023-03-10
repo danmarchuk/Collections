@@ -11,165 +11,12 @@
         <!--Dictionary-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="DictionaryStoryboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="DictionaryController" customModule="Collections" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DictionaryStoryboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="DictionaryCollectionViewController" customModule="Collections" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="K2d-YW-rMM">
-                                <rect key="frame" x="1" y="59" width="394" height="759"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="140" translatesAutoresizingMaskIntoConstraints="NO" id="nCp-yi-s7D">
-                                        <rect key="frame" x="67.666666666666657" y="0.0" width="258.66666666666674" height="50"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Array" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ru8-7g-VQd">
-                                                <rect key="frame" x="0.0" y="0.0" width="41" height="50"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dictionary" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyd-OR-NQe">
-                                                <rect key="frame" x="181" y="0.0" width="77.666666666666686" height="50"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="swH-Av-GTu"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Aiz-iq-2wz">
-                                        <rect key="frame" x="0.0" y="50" width="394" height="300"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="CRB-o5-TeT">
-                                                <rect key="frame" x="0.0" y="0.0" width="394" height="300"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="EwW-ez-rZ8">
-                                                        <rect key="frame" x="0.0" y="0.0" width="197" height="300"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cu4-bF-7xP">
-                                                                <rect key="frame" x="0.0" y="0.0" width="197" height="100"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="197" id="Wpc-BF-DTh"/>
-                                                                    <constraint firstAttribute="height" constant="100" id="sBT-pS-PYK"/>
-                                                                </constraints>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="gray" title="Find the first contact" cornerStyle="fixed">
-                                                                    <backgroundConfiguration key="background" cornerRadius="1">
-                                                                        <color key="strokeColor" systemColor="opaqueSeparatorColor"/>
-                                                                    </backgroundConfiguration>
-                                                                </buttonConfiguration>
-                                                                <connections>
-                                                                    <action selector="arrFindFirstCon:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="g34-Xf-QK4"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBQ-qm-NCa">
-                                                                <rect key="frame" x="0.0" y="100" width="197" height="100"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="100" id="dYo-SH-1dD"/>
-                                                                    <constraint firstAttribute="width" constant="197" id="kyE-gl-sdb"/>
-                                                                </constraints>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="gray" title="Find the last contact" cornerStyle="fixed">
-                                                                    <backgroundConfiguration key="background" cornerRadius="1">
-                                                                        <color key="strokeColor" systemColor="opaqueSeparatorColor"/>
-                                                                    </backgroundConfiguration>
-                                                                </buttonConfiguration>
-                                                                <connections>
-                                                                    <action selector="arrFindLastCon:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Na1-tp-bHb"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTd-SF-4Y9">
-                                                                <rect key="frame" x="0.0" y="200" width="197" height="100"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="197" id="1Iy-bx-2c4"/>
-                                                                    <constraint firstAttribute="height" constant="100" id="HVg-lT-Vin"/>
-                                                                </constraints>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="gray" title="Search for a non-existing element" cornerStyle="fixed">
-                                                                    <backgroundConfiguration key="background" cornerRadius="1">
-                                                                        <color key="strokeColor" systemColor="opaqueSeparatorColor"/>
-                                                                    </backgroundConfiguration>
-                                                                </buttonConfiguration>
-                                                                <connections>
-                                                                    <action selector="arrSearchNonExist:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="yOY-Xl-4da"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xai-so-fvl">
-                                                        <rect key="frame" x="197" y="0.0" width="197" height="300"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4a-h5-CUQ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="197" height="100"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="197" id="Yer-hj-T0W"/>
-                                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="tSc-c5-nLt"/>
-                                                                </constraints>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="gray" title="Find the first contact" cornerStyle="fixed">
-                                                                    <backgroundConfiguration key="background" cornerRadius="1">
-                                                                        <color key="strokeColor" systemColor="opaqueSeparatorColor"/>
-                                                                    </backgroundConfiguration>
-                                                                </buttonConfiguration>
-                                                                <connections>
-                                                                    <action selector="dictFindFirst:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="G2b-6x-sjf"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fwl-Kc-xYb">
-                                                                <rect key="frame" x="0.0" y="100" width="197" height="100"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="100" id="QrU-Id-b4E"/>
-                                                                    <constraint firstAttribute="width" constant="197" id="vrP-eV-vV4"/>
-                                                                </constraints>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="gray" title="Find the last contact" cornerStyle="fixed">
-                                                                    <backgroundConfiguration key="background" cornerRadius="1">
-                                                                        <color key="strokeColor" systemColor="opaqueSeparatorColor"/>
-                                                                    </backgroundConfiguration>
-                                                                </buttonConfiguration>
-                                                                <connections>
-                                                                    <action selector="dictFindLast:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="EPY-gf-v13"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fcj-og-ZOV">
-                                                                <rect key="frame" x="0.0" y="200" width="197" height="100"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="197" id="wnH-MZ-flB"/>
-                                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="y5t-s2-hFz"/>
-                                                                </constraints>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="gray" title="Search for a non-existing element" cornerStyle="fixed">
-                                                                    <backgroundConfiguration key="background" cornerRadius="1">
-                                                                        <color key="strokeColor" systemColor="opaqueSeparatorColor"/>
-                                                                    </backgroundConfiguration>
-                                                                </buttonConfiguration>
-                                                                <connections>
-                                                                    <action selector="dictSearchNonExist:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Kxc-RP-i1K"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                    </stackView>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fl5-Da-M6M">
-                                        <rect key="frame" x="77" y="350" width="240" height="409"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    </view>
-                                </subviews>
-                            </stackView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="K2d-YW-rMM" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="2q0-Lg-H57"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="K2d-YW-rMM" secondAttribute="bottom" id="82X-Oc-5Cd"/>
-                            <constraint firstItem="K2d-YW-rMM" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="1" id="Agq-ck-hca"/>
-                            <constraint firstItem="K2d-YW-rMM" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="QXy-p5-Eoj"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Dictionary" id="ahm-XG-vCf"/>
                 </viewController>
@@ -179,9 +26,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

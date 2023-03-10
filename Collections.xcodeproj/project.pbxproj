@@ -82,20 +82,17 @@
 		9356AB9329B24CE300B7D132 /* Collections */ = {
 			isa = PBXGroup;
 			children = (
-				9378F7B129B4DD58003F15AE /* Dictionary.storyboard */,
+				9387DFB629BAB9060023CC42 /* View */,
 				935DD2A229BA905600C6F509 /* DictionaryCollectionViewController.swift */,
 				935DD2A429BA9B1700C6F509 /* DictionaryHeader.swift */,
 				93D8FB3529B6615F002D4094 /* Contact.swift */,
 				93BD6C1329B6C1BC00AAE641 /* Manager.swift */,
 				9356AB9429B24CE300B7D132 /* AppDelegate.swift */,
 				9356AB9629B24CE300B7D132 /* SceneDelegate.swift */,
-				9378F7AD29B4C99F003F15AE /* Set.storyboard */,
 				9378F7AF29B4C9AE003F15AE /* SetController.swift */,
 				935DD29829B8CF4900C6F509 /* ArrayCollectionViewController.swift */,
 				935DD29E29B9715400C6F509 /* Header.swift */,
-				935DD29F29B9715400C6F509 /* Header.xib */,
 				935DD29A29B8D8D100C6F509 /* MyCollectionViewCell.swift */,
-				935DD29B29B8D8D100C6F509 /* MyCollectionViewCell.xib */,
 				9378F7AB29B4C912003F15AE /* Array */,
 				9378F7AC29B4C937003F15AE /* Menu */,
 				9356AB9D29B24CE400B7D132 /* Assets.xcassets */,
@@ -108,7 +105,6 @@
 		9378F7AB29B4C912003F15AE /* Array */ = {
 			isa = PBXGroup;
 			children = (
-				9356AB9A29B24CE300B7D132 /* Array.storyboard */,
 			);
 			path = Array;
 			sourceTree = "<group>";
@@ -120,6 +116,18 @@
 				9356ABAA29B3F58800B7D132 /* Menu.storyboard */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		9387DFB629BAB9060023CC42 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9378F7B129B4DD58003F15AE /* Dictionary.storyboard */,
+				9378F7AD29B4C99F003F15AE /* Set.storyboard */,
+				935DD29F29B9715400C6F509 /* Header.xib */,
+				935DD29B29B8D8D100C6F509 /* MyCollectionViewCell.xib */,
+				9356AB9A29B24CE300B7D132 /* Array.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

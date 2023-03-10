@@ -44,11 +44,17 @@ class MenuController:  UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            performSegue(withIdentifier: "FromMenuToArray", sender: self)
+            let destinationVC = ArrayCollectionViewController()
+            destinationVC.title = "Array 56898u998"
+            navigationController?.pushViewController(destinationVC, animated: true)
         case 1:
-            performSegue(withIdentifier: "FromMenuToSet", sender: self)
+            let destinationVC = SetController()
+            destinationVC.title = "Set 98989"
+            navigationController?.pushViewController(destinationVC, animated: true)
         case 2:
-            performSegue(withIdentifier: "FromMenuToDictionary", sender: self)
+            let destinationVC = DictionaryCollectionViewController()
+            destinationVC.title = "Dictionary 777"
+            navigationController?.pushViewController(destinationVC, animated: true)
         default:
             break
         }

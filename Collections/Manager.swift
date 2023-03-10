@@ -14,6 +14,20 @@ struct Manager {
         return roundedTime
     }
     
+    func showActivityIndicator (sender: UICollectionReusableView) -> UIActivityIndicatorView {
+        // Show a loading progress bar inside the button
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.color = .white
+        activityIndicator.startAnimating()
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        sender.addSubview(activityIndicator)
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: sender.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: sender.centerYAnchor)
+        ])
+        return activityIndicator
+    }
+    
     
     
     

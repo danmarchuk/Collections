@@ -82,15 +82,11 @@
 		9356AB9329B24CE300B7D132 /* Collections */ = {
 			isa = PBXGroup;
 			children = (
-				9387DFB629BAB9060023CC42 /* View */,
-				9387DFB729BABA0E0023CC42 /* Controller */,
-				935DD2A429BA9B1700C6F509 /* DictionaryHeader.swift */,
-				93D8FB3529B6615F002D4094 /* Contact.swift */,
-				9387DFB829BABA320023CC42 /* Model */,
 				9356AB9429B24CE300B7D132 /* AppDelegate.swift */,
 				9356AB9629B24CE300B7D132 /* SceneDelegate.swift */,
-				935DD29E29B9715400C6F509 /* Header.swift */,
-				935DD29A29B8D8D100C6F509 /* MyCollectionViewCell.swift */,
+				9387DFB629BAB9060023CC42 /* View */,
+				9387DFB729BABA0E0023CC42 /* Controller */,
+				9387DFB829BABA320023CC42 /* Model */,
 				9378F7AB29B4C912003F15AE /* Array */,
 				9378F7AC29B4C937003F15AE /* Menu */,
 				9356AB9D29B24CE400B7D132 /* Assets.xcassets */,
@@ -141,6 +137,10 @@
 		9387DFB829BABA320023CC42 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				935DD29E29B9715400C6F509 /* Header.swift */,
+				935DD29A29B8D8D100C6F509 /* MyCollectionViewCell.swift */,
+				935DD2A429BA9B1700C6F509 /* DictionaryHeader.swift */,
+				93D8FB3529B6615F002D4094 /* Contact.swift */,
 				93BD6C1329B6C1BC00AAE641 /* Manager.swift */,
 			);
 			path = Model;

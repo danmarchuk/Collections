@@ -8,6 +8,9 @@
 import UIKit
 struct Manager {
     
+    // MARK: - shared functions
+    
+    
     func calculateExecutionTime(end: DispatchTime, start: DispatchTime) -> Double {
         let executionTime = Double(end.uptimeNanoseconds - start.uptimeNanoseconds) / 1_000_000_000
         let roundedTime = round(executionTime * 1000) / 1000.0
@@ -28,10 +31,24 @@ struct Manager {
         return activityIndicator
     }
     
+    // MARK: - ArrayCollectionViewController functions
+    
+    func textWithTime(cellNumber: Int, time: Double) -> String {
+        switch cellNumber {
+        case 0:
+            return "Array creation time \(time)"
+        case 1...6:
+            return "Insertion time \(time)"
+        case 7...12:
+            return "Removal time \(time)"
+        default:
+            return "Error"
+        }
+    }
     
     
     
-    // MARK: - SetControllerMethods
+    // MARK: - SetController functions
     
     func unmatchedCharacters(string1: String, string2: String) -> String {
         var unmatchedCharacters: String = ""
@@ -69,5 +86,21 @@ struct Manager {
         }
 
         return nonMatchingChars
+    }
+    
+    // MARK: - DictionaryCollectionVC methods
+    
+    func dictTextWithTime(cellNumber: Int, time: Double, elementNumber: Int) -> String {
+        switch cellNumber {
+        case 0...1:
+            return "First element search time: \(time) ms. Result Number \(elementNumber)"
+        case 2...3:
+            return "Last element search time: \(time) ms. Result Number \(elementNumber)"
+        case 4...5:
+            return "Non-existing element search time: \(time) ms. Result Number \(elementNumber)"
+        default:
+            return "Error"
+        }
+        
     }
 }

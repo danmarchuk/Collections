@@ -10,39 +10,38 @@ import UIKit
 class DictionaryHeader: UICollectionReusableView {
     
     static let identifier = "DictionaryHeader"
-
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
-    private let label: UILabel = {
+    private let stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.alignment = .fill
+        stackView.distribution = .fillEqually
+        
         let label = UILabel()
         label.text = "Array"
-        label.textAlignment = .right
-        return label
-    }()
-    
-    private let label2: UILabel = {
+        label.textAlignment = .center
+        
         let label2 = UILabel()
         label2.text = "Dictionary"
-        label2.textAlignment = .left
-        return label2
+        label2.textAlignment = .center
+        
+        stackView.addArrangedSubview(label)
+        stackView.addArrangedSubview(label2)
+        return stackView
     }()
     
     
     
     public func configure() {
         backgroundColor = .white
-        addSubview(label)
-        addSubview(label2)
-        
-
+        addSubview(stackView)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        label.frame = bounds
-        label2.frame = bounds
+        stackView.frame = bounds
     }
 }

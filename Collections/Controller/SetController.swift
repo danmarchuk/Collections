@@ -10,17 +10,23 @@ import UIKit
 class SetController: UIViewController {
     var manager = Manager()
     
+    // TextFields
+    @IBOutlet weak var firstTextField: UITextField!
+    @IBOutlet weak var secondTextField: UITextField!
+    
+    // labels
+    @IBOutlet weak var allMatchingLettersLabel: UILabel!
+    @IBOutlet weak var notMatchedCharactersLabel: UILabel!
+    @IBOutlet weak var uniqueCharsLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        allMatchingLettersLabel.isHidden = true
+        notMatchedCharactersLabel.isHidden = true
+        uniqueCharsLabel.isHidden = true
     }
     
-    @IBOutlet weak var firstTextField: UITextField!
-    
-    
-    @IBOutlet weak var secondTextField: UITextField!
-    
+    // button 1
     @IBAction func allMatchingLettersButton(_ sender: UIButton) {
         var matchingChars = ""
         if let firstText = firstTextField.text {
@@ -34,26 +40,24 @@ class SetController: UIViewController {
                 }
             }
         }
-        
+        allMatchingLettersLabel.isHidden = false
         allMatchingLettersLabel.text = matchingChars
         
     }
-    
-    @IBOutlet weak var allMatchingLettersLabel: UILabel!
-    
+
+    // button 2
     @IBAction func notMatchedCharactersButton(_ sender: UIButton) {
         var notmatchingChars = ""
         if let firstText = firstTextField.text {
             if let secondText = secondTextField.text {
                 notmatchingChars = manager.unmatchedCharacters(string1: firstText, string2: secondText)
             }
-            
         }
-        
+        notMatchedCharactersLabel.isHidden = false
         notMatchedCharactersLabel.text = notmatchingChars
         
     }
-    @IBOutlet weak var notMatchedCharactersLabel: UILabel!
+
     
     
     
@@ -63,13 +67,12 @@ class SetController: UIViewController {
             if let secondText = secondTextField.text {
                 notmatchingChars = manager.uniqueChars(string1: firstText, string2: secondText)
             }
-            
         }
-        
+        uniqueCharsLabel.isHidden = false
         uniqueCharsLabel.text = notmatchingChars
     }
     
-    @IBOutlet weak var uniqueCharsLabel: UILabel!
+
     
 
     

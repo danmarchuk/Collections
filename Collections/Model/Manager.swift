@@ -8,8 +8,13 @@
 import UIKit
 struct Manager {
     
-    // MARK: - shared functions
+    // MARK: - MenuVC functions
     
+    var random: Int {
+        return Int.random(in: 10000..<100000)
+    }
+    
+    // MARK: - shared functions
     
     func calculateExecutionTime(end: DispatchTime, start: DispatchTime) -> Double {
         let executionTime = Double(end.uptimeNanoseconds - start.uptimeNanoseconds) / 1_000_000_000
@@ -30,6 +35,8 @@ struct Manager {
         ])
         return activityIndicator
     }
+    
+    
     
     // MARK: - ArrayCollectionViewController functions
     

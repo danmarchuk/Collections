@@ -26,15 +26,12 @@ class DictionaryCollectionViewController: UIViewController, UICollectionViewDele
             self.addContactstoDict()
         }
         layoutSetup()
-        
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionView?.frame = view.bounds
     }
-    
-    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         dictTasksArr.count
@@ -47,8 +44,6 @@ class DictionaryCollectionViewController: UIViewController, UICollectionViewDele
         cell.accessibilityIdentifier = manager.indentificatorForCell(cellNumber: indexPath.row)
         return cell
     }
-    
-    
     
     // MARK: - CollectionView Header
     

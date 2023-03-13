@@ -9,13 +9,10 @@ import Foundation
 import UIKit
 
 class MenuController:  UITableViewController {
-
     
-    
-
     let menuItems = ["Array", "Set", "Dictionary"]
     
-
+    let manager = Manager()
     @IBOutlet var myTableView: UITableView!
     
     override func viewDidLoad() {
@@ -45,15 +42,17 @@ class MenuController:  UITableViewController {
         switch indexPath.row {
         case 0:
             let destinationVC = ArrayCollectionViewController()
-            destinationVC.title = "Array 56898u998"
+
+            destinationVC.titleString = "Array \(manager.random)"
             navigationController?.pushViewController(destinationVC, animated: true)
         case 1:
-            let destinationVC = SetController()
-            destinationVC.title = "Set 98989"
+            let storydoard = UIStoryboard(name: "Set", bundle: nil)
+            let destinationVC = storydoard.instantiateViewController(withIdentifier: "SetStoryboard") as! SetController
+            destinationVC.titleString = "Set \(manager.random)"
             navigationController?.pushViewController(destinationVC, animated: true)
         case 2:
             let destinationVC = DictionaryCollectionViewController()
-            destinationVC.title = "Dictionary 777"
+            destinationVC.titleString = "Dictionary \(manager.random)"
             navigationController?.pushViewController(destinationVC, animated: true)
         default:
             break

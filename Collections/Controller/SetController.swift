@@ -8,7 +8,10 @@
 import UIKit
 
 class SetController: UIViewController {
+    
     var manager = Manager()
+    
+    var titleString: String?
     
     // TextFields
     @IBOutlet weak var firstTextField: UITextField!
@@ -21,9 +24,10 @@ class SetController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        allMatchingLettersLabel.isHidden = true
-//        notMatchedCharactersLabel.isHidden = true
-//        uniqueCharsLabel.isHidden = true
+        title = titleString
+        allMatchingLettersLabel.isHidden = true
+        notMatchedCharactersLabel.isHidden = true
+        uniqueCharsLabel.isHidden = true
     }
     
     

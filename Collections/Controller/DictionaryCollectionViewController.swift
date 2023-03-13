@@ -9,6 +9,7 @@ import UIKit
 
 class DictionaryCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
+    var titleString: String?
     let dictTasksArr: [String] = ["Find the first contact", "Find the first contact", "Find the last contact", "Find the last contact", "Search for a non-existing element", "Search for a non-existing element"]
     var contactArray: [Contact] = []
     var contactDict: [String:String] = [:]
@@ -17,6 +18,7 @@ class DictionaryCollectionViewController: UIViewController, UICollectionViewDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = titleString
         
         // Do any additional setup after loading the view.
         DispatchQueue.global(qos: .background).async {
@@ -24,7 +26,7 @@ class DictionaryCollectionViewController: UIViewController, UICollectionViewDele
             self.addContactstoDict()
         }
         layoutSetup()
-
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -42,6 +44,7 @@ class DictionaryCollectionViewController: UIViewController, UICollectionViewDele
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyCollectionViewCell.identifier, for: indexPath) as! MyCollectionViewCell
         cell.label.text = dictTasksArr[indexPath.row]
         cell.label.textAlignment = .center
+        cell.accessibilityIdentifier = manager.indentificatorForCell(cellNumber: indexPath.row)
         return cell
     }
     

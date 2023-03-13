@@ -9,8 +9,7 @@ import UIKit
 
 class ArrayCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    
-    
+    var titleString: String?
     let tasksArr: [String] = ["Insert 1000 elements at the begining of the array one-by-one.", "Insert 1000 elements at the begining of the array.", "Insert 1000 elements in the middle of the array one-by-one.", "Insert 1000 elements in the middle of the array.", "Insert 1000 elements at the end of the array one-by-one.", "Insert 1000 elements at the end of the array.", "Remove 1000 elements at the end of the array one by-one.", "Remove 1000 elements at the end of the array.", "Remove 1000 elements at the beginning of the array one by-one.", "Remove 1000 elements at the beginning of the array.", "Remove 1000 elements in the middle of the array one by-one.", "Remove 1000 elements in the middle of the array."]
     let createArr: [String] = ["Create an Int array with 10_000_000 elements."]
     var manager = Manager()
@@ -24,6 +23,7 @@ class ArrayCollectionViewController: UIViewController, UICollectionViewDelegate,
     
     override func viewDidLoad() {
         layoutSetup()
+        title = titleString
         
     }
     

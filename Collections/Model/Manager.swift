@@ -46,6 +46,41 @@ struct Manager {
         }
     }
     
+    func indentificatorForCell(cellNumber: Int) -> String {
+        switch cellNumber {
+        case 0:
+            return "Cell_0"
+        case 1:
+            return "Cell_1"
+        case 2:
+            return "Cell_2"
+        case 3:
+            return "Cell_3"
+        case 4:
+            return "Cell_4"
+        case 5:
+            return "Cell_5"
+        case 6:
+            return "Cell_6"
+        case 7:
+            return "Cell_7"
+        case 8:
+            return "Cell_8"
+        case 9:
+            return "Cell_9"
+        case 10:
+            return "Cell_10"
+        case 11:
+            return "Cell_11"
+        case 12:
+            return "Cell_12"
+        default:
+            print("wow")
+        }
+        return "wow"
+    }
+
+    
     
     
     // MARK: - SetController functions

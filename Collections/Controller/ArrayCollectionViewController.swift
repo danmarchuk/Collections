@@ -12,7 +12,7 @@ class ArrayCollectionViewController: UIViewController, UICollectionViewDelegate,
     
     
     let tasksArr: [String] = ["Insert 1000 elements at the begining of the array one-by-one.", "Insert 1000 elements at the begining of the array.", "Insert 1000 elements in the middle of the array one-by-one.", "Insert 1000 elements in the middle of the array.", "Insert 1000 elements at the end of the array one-by-one.", "Insert 1000 elements at the end of the array.", "Remove 1000 elements at the end of the array one by-one.", "Remove 1000 elements at the end of the array.", "Remove 1000 elements at the beginning of the array one by-one.", "Remove 1000 elements at the beginning of the array.", "Remove 1000 elements in the middle of the array one by-one.", "Remove 1000 elements in the middle of the array."]
-    let createArr: [String] = ["Create an Int array with 10_000_000 elements"]
+    let createArr: [String] = ["Create an Int array with 10_000_000 elements."]
     var manager = Manager()
     var collectionView: UICollectionView?
     var intArray: [Int] = []
@@ -53,6 +53,13 @@ class ArrayCollectionViewController: UIViewController, UICollectionViewDelegate,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyCollectionViewCell.identifier, for: indexPath) as! MyCollectionViewCell
         cell.label.text = tasksArr[indexPath.row]
+        
+        // add accessibility identifier
+        if indexPath.section == 0 {
+            cell.accessibilityIdentifier = manager.indentificatorForCell(cellNumber: indexPath.row)
+        } else {
+            cell.accessibilityIdentifier = manager.indentificatorForCell(cellNumber: indexPath.row + 1)
+        }
         return cell
     }
     
@@ -69,11 +76,10 @@ class ArrayCollectionViewController: UIViewController, UICollectionViewDelegate,
 
     // MARK: - A View was clicked on
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        
         let cellNumber = indexPath.row
         if let cell = collectionView.cellForItem(at: indexPath) as? MyCollectionViewCell {
             // disable the button while the array is being created
-            
             let activityIndicator = manager.showActivityIndicator(sender: cell)
             cell.isUserInteractionEnabled = false
             DispatchQueue.global(qos: .userInitiated).async {
@@ -157,7 +163,6 @@ class ArrayCollectionViewController: UIViewController, UICollectionViewDelegate,
         default:
             print("wow")
         }
-        
     }
     
     private func layoutSetup() {
@@ -173,6 +178,7 @@ class ArrayCollectionViewController: UIViewController, UICollectionViewDelegate,
         collectionView?.backgroundColor = .gray
         view.addSubview(collectionView!)
     }
+    
     
     
 }

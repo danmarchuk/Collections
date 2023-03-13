@@ -21,10 +21,11 @@ class SetController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        allMatchingLettersLabel.isHidden = true
-        notMatchedCharactersLabel.isHidden = true
-        uniqueCharsLabel.isHidden = true
+//        allMatchingLettersLabel.isHidden = true
+//        notMatchedCharactersLabel.isHidden = true
+//        uniqueCharsLabel.isHidden = true
     }
+    
     
     // button 1
     @IBAction func allMatchingLettersButton(_ sender: UIButton) {

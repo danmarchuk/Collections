@@ -118,15 +118,15 @@ class DictionaryCollectionViewController: UIViewController, UICollectionViewDele
             }
         case 4:
             let ind = 10_000_001
-            if ind < self.contactArray.count {
-                let contact = self.contactArray[ind]
+            if ind < copyArr.count {
+                let contact = copyArr[ind]
                 print("Found contact:", contact)
             } else {
                 print("Contact not found")
             }
             return 10_000_001
         case 5:
-            if let nonExist = self.contactDict["Name10000001"] {
+            if let nonExist = copyDict["Name10000001"] {
                 print("The \(nonExist) element exists")
             } else {
                 print("The element does't exist")

@@ -145,4 +145,24 @@ struct Manager {
         }
         
     }
+    
+    func addContactsToArray() -> Array<Contact> {
+        var contactArray: [Contact] = []
+        for i in 0..<10_000_000 {
+            let name = "Name\(i)"
+            let phone = String(format: "%07d", i)
+            contactArray.append(Contact(name: name, phone: phone))
+        }
+        return contactArray
+    }
+    
+    func addContactstoDict() -> Dictionary<String, String> {
+        var contactDict: [String:String] = [:]
+        for i in 0..<10_000_000 {
+            let name = "Name\(i)"
+            let phone = String(format: "%07d", i)
+            contactDict[name] = phone
+        }
+        return contactDict
+    }
 }

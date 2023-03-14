@@ -22,8 +22,8 @@ class DictionaryCollectionViewController: UIViewController, UICollectionViewDele
         
         // Do any additional setup after loading the view.
         DispatchQueue.global(qos: .background).async {
-            self.addContactsToArray()
-            self.addContactstoDict()
+            self.contactArray = self.manager.addContactsToArray()
+            self.contactDict = self.manager.addContactstoDict()
         }
         layoutSetup()
     }
@@ -134,22 +134,6 @@ class DictionaryCollectionViewController: UIViewController, UICollectionViewDele
             print("Hello World")
         }
         return 0
-    }
-    
-    func addContactsToArray() {
-        for i in 0..<10_000_000 {
-            let name = "Name\(i)"
-            let phone = String(format: "%07d", i)
-            contactArray.append(Contact(name: name, phone: phone))
-        }
-    }
-    
-    func addContactstoDict() {
-        for i in 0..<10_000_000 {
-            let name = "Name\(i)"
-            let phone = String(format: "%07d", i)
-            contactDict[name] = phone
-        }
     }
     
     private func layoutSetup() {

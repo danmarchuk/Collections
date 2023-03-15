@@ -36,8 +36,6 @@ struct Manager {
         return activityIndicator
     }
     
-    
-    
     // MARK: - ArrayCollectionViewController functions
     
     func textWithTime(cellNumber: Int, time: Double) -> String {

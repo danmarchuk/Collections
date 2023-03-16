@@ -22,9 +22,6 @@ class ViewController: UITableViewController {
            myTableView.delegate = self
        }
        
-       
-       
-
        override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
            return menuItems.count

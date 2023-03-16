@@ -24,16 +24,19 @@
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iLr-Ax-15p">
                                                 <rect key="frame" x="0.0" y="0.0" width="373" height="34"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="TextField1"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tmM-Td-iTo">
                                                 <rect key="frame" x="0.0" y="44" width="373" height="34"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="TextField2"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nMz-kg-rdc">
                                                 <rect key="frame" x="0.0" y="88" width="373" height="34.333333333333343"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="Button1"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="All matching letters"/>
                                                 <connections>
@@ -42,12 +45,14 @@
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6k3-Tx-CMa">
                                                 <rect key="frame" x="0.0" y="132.33333333333334" width="373" height="20.333333333333343"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="Label1"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ekB-kb-Iaw">
                                                 <rect key="frame" x="0.0" y="162.66666666666666" width="373" height="34.333333333333343"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="Button2"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="All characters that do not match"/>
                                                 <connections>
@@ -56,12 +61,14 @@
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xx1-CX-E4H">
                                                 <rect key="frame" x="0.0" y="207" width="373" height="20.333333333333343"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="Label2"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0g-gG-Yme">
                                                 <rect key="frame" x="0.0" y="237.33333333333331" width="373" height="34.333333333333314"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="Button3"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="All unique characters from the first textfield that do not match in the second"/>
                                                 <connections>
@@ -70,6 +77,7 @@
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOd-GT-hyk">
                                                 <rect key="frame" x="0.0" y="281.66666666666669" width="373" height="20.333333333333314"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="Label3"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--SetVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="SetStoryboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="SetVC" customModule="Collections" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NTo-Hb-NWk">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="umU-z4-mlP">
+                                        <rect key="frame" x="10" y="0.0" width="373" height="302"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iLr-Ax-15p">
+                                                <rect key="frame" x="0.0" y="0.0" width="373" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tmM-Td-iTo">
+                                                <rect key="frame" x="0.0" y="44" width="373" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nMz-kg-rdc">
+                                                <rect key="frame" x="0.0" y="88" width="373" height="34.333333333333343"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="All matching letters"/>
+                                                <connections>
+                                                    <action selector="allMatchingLettersButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="6iJ-w2-2Jv"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6k3-Tx-CMa">
+                                                <rect key="frame" x="0.0" y="132.33333333333334" width="373" height="20.333333333333343"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ekB-kb-Iaw">
+                                                <rect key="frame" x="0.0" y="162.66666666666666" width="373" height="34.333333333333343"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="All characters that do not match"/>
+                                                <connections>
+                                                    <action selector="notMatchedCharactersButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="92a-rH-5hR"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xx1-CX-E4H">
+                                                <rect key="frame" x="0.0" y="207" width="373" height="20.333333333333343"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0g-gG-Yme">
+                                                <rect key="frame" x="0.0" y="237.33333333333331" width="373" height="34.333333333333314"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="All unique characters from the first textfield that do not match in the second"/>
+                                                <connections>
+                                                    <action selector="uniqueCharsButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ECx-Oq-ED5"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOd-GT-hyk">
+                                                <rect key="frame" x="0.0" y="281.66666666666669" width="373" height="20.333333333333314"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1pm-eL-PW3">
+                                        <rect key="frame" x="76.666666666666686" y="302" width="240" height="457"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="umU-z4-mlP" firstAttribute="leading" secondItem="NTo-Hb-NWk" secondAttribute="leading" constant="10" id="2lF-GU-cpI"/>
+                                    <constraint firstItem="umU-z4-mlP" firstAttribute="top" secondItem="NTo-Hb-NWk" secondAttribute="top" id="ILP-2L-wLG"/>
+                                    <constraint firstItem="1pm-eL-PW3" firstAttribute="top" secondItem="umU-z4-mlP" secondAttribute="bottom" id="Puj-fC-e9i"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="NTo-Hb-NWk" secondAttribute="trailing" id="P0b-DW-VJF"/>
+                            <constraint firstItem="NTo-Hb-NWk" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="T5m-zX-f1p"/>
+                            <constraint firstItem="NTo-Hb-NWk" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="TAf-tm-dcc"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="NTo-Hb-NWk" secondAttribute="bottom" id="WZJ-yo-r5j"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="allMatchingLettersLabel" destination="6k3-Tx-CMa" id="Mv7-ve-1gp"/>
+                        <outlet property="firstTextField" destination="iLr-Ax-15p" id="n3t-C9-UeV"/>
+                        <outlet property="notMatchedCharactersLabel" destination="xx1-CX-E4H" id="zbh-lk-eVZ"/>
+                        <outlet property="secondTextField" destination="tmM-Td-iTo" id="AGQ-fJ-pOG"/>
+                        <outlet property="uniqueCharsLabel" destination="xOd-GT-hyk" id="Qsq-v1-2pt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="125.95419847328243" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

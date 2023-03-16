@@ -128,6 +128,42 @@ struct Manager {
            return nonMatchingChars
        }
 
+// MARK: - DictionaryVC functions
+    
+    func dictTextWithTime(cellNumber: Int, time: Double, elementNumber: Int) -> String {
+           switch cellNumber {
+           case 0...1:
+               return "First element search time: \(time) ms. Result Number \(elementNumber)"
+           case 2...3:
+               return "Last element search time: \(time) ms. Result Number \(elementNumber)"
+           case 4...5:
+               return "Non-existing element search time: \(time) ms. Result Number \(elementNumber)"
+           default:
+               return "Error"
+           }
+           
+       }
+       
+       func addContactsToArray() -> Array<Contact> {
+           var contactArray: [Contact] = []
+           for i in 0..<10_000_000 {
+               let name = "Name\(i)"
+               let phone = String(format: "%07d", i)
+               contactArray.append(Contact(name: name, phone: phone))
+           }
+           return contactArray
+       }
+       
+       func addContactstoDict() -> Dictionary<String, String> {
+           var contactDict: [String:String] = [:]
+           for i in 0..<10_000_000 {
+               let name = "Name\(i)"
+               let phone = String(format: "%07d", i)
+               contactDict[name] = phone
+           }
+           return contactDict
+       }
+
 
     
 

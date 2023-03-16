@@ -20,6 +20,10 @@
 		9381886329C3688A00AB12A2 /* MyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9381886129C3688A00AB12A2 /* MyCollectionViewCell.xib */; };
 		9381886529C36DA700AB12A2 /* SetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381886429C36DA700AB12A2 /* SetVC.swift */; };
 		9381886729C36E3700AB12A2 /* SetStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9381886629C36E3700AB12A2 /* SetStoryboard.storyboard */; };
+		9381886929C3761F00AB12A2 /* DictionaryStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9381886829C3761F00AB12A2 /* DictionaryStoryboard.storyboard */; };
+		9381886B29C3763100AB12A2 /* DictionaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381886A29C3763100AB12A2 /* DictionaryVC.swift */; };
+		9381886D29C3783E00AB12A2 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381886C29C3783E00AB12A2 /* Contact.swift */; };
+		9381886F29C37DDF00AB12A2 /* DictionaryHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381886E29C37DDE00AB12A2 /* DictionaryHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		9381886129C3688A00AB12A2 /* MyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCollectionViewCell.xib; sourceTree = "<group>"; };
 		9381886429C36DA700AB12A2 /* SetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetVC.swift; sourceTree = "<group>"; };
 		9381886629C36E3700AB12A2 /* SetStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SetStoryboard.storyboard; sourceTree = "<group>"; };
+		9381886829C3761F00AB12A2 /* DictionaryStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DictionaryStoryboard.storyboard; sourceTree = "<group>"; };
+		9381886A29C3763100AB12A2 /* DictionaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryVC.swift; sourceTree = "<group>"; };
+		9381886C29C3783E00AB12A2 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		9381886E29C37DDE00AB12A2 /* DictionaryHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +83,10 @@
 				9356AB9829B24CE300B7D132 /* ViewController.swift */,
 				9381885A29C35E4B00AB12A2 /* ArrayVC.swift */,
 				9381886429C36DA700AB12A2 /* SetVC.swift */,
+				9381886A29C3763100AB12A2 /* DictionaryVC.swift */,
+				9381886E29C37DDE00AB12A2 /* DictionaryHeader.swift */,
+				9381886C29C3783E00AB12A2 /* Contact.swift */,
+				9381886829C3761F00AB12A2 /* DictionaryStoryboard.storyboard */,
 				9381886629C36E3700AB12A2 /* SetStoryboard.storyboard */,
 				9381885E29C35FBE00AB12A2 /* ArrayStoryboard.storyboard */,
 				9381886029C3688A00AB12A2 /* MyCollectionViewCell.swift */,
@@ -149,6 +161,7 @@
 				9381886329C3688A00AB12A2 /* MyCollectionViewCell.xib in Resources */,
 				9356ABA129B24CE400B7D132 /* LaunchScreen.storyboard in Resources */,
 				9381886729C36E3700AB12A2 /* SetStoryboard.storyboard in Resources */,
+				9381886929C3761F00AB12A2 /* DictionaryStoryboard.storyboard in Resources */,
 				9381885F29C35FBE00AB12A2 /* ArrayStoryboard.storyboard in Resources */,
 				9356AB9E29B24CE400B7D132 /* Assets.xcassets in Resources */,
 				9356AB9C29B24CE300B7D132 /* Main.storyboard in Resources */,
@@ -162,10 +175,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9381886D29C3783E00AB12A2 /* Contact.swift in Sources */,
 				9356AB9929B24CE300B7D132 /* ViewController.swift in Sources */,
 				9381885B29C35E4B00AB12A2 /* ArrayVC.swift in Sources */,
 				9381886229C3688A00AB12A2 /* MyCollectionViewCell.swift in Sources */,
 				9356AB9529B24CE300B7D132 /* AppDelegate.swift in Sources */,
+				9381886B29C3763100AB12A2 /* DictionaryVC.swift in Sources */,
+				9381886F29C37DDF00AB12A2 /* DictionaryHeader.swift in Sources */,
 				9356AB9729B24CE300B7D132 /* SceneDelegate.swift in Sources */,
 				9381886529C36DA700AB12A2 /* SetVC.swift in Sources */,
 				9381885929C35E0100AB12A2 /* Manager.swift in Sources */,

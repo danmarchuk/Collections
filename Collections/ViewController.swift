@@ -50,9 +50,9 @@ class ViewController: UITableViewController {
                navigationController?.pushViewController(destinationVC, animated: true)
 
            case 2:
-               let storydoard = UIStoryboard(name: "ArrayStoryboard", bundle: nil)
-               let destinationVC = storydoard.instantiateViewController(withIdentifier: "ArrayStoryboard") as! ArrayVC
-               destinationVC.titleString = "Array \(manager.random)"
+               let storydoard = UIStoryboard(name: "DictionaryStoryboard", bundle: nil)
+               let destinationVC = storydoard.instantiateViewController(withIdentifier: "DictionaryStoryboard") as! DictionaryVC
+               destinationVC.titleString = "Dictionary \(manager.random)"
                navigationController?.pushViewController(destinationVC, animated: true)
 
            default:

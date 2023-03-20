@@ -146,19 +146,9 @@
 			children = (
 				9356AB9429B24CE300B7D132 /* AppDelegate.swift */,
 				9356AB9629B24CE300B7D132 /* SceneDelegate.swift */,
-				9356AB9829B24CE300B7D132 /* ViewController.swift */,
-				9381885A29C35E4B00AB12A2 /* ArrayVC.swift */,
-				9381886429C36DA700AB12A2 /* SetVC.swift */,
-				9381886A29C3763100AB12A2 /* DictionaryVC.swift */,
-				9381886E29C37DDE00AB12A2 /* DictionaryHeader.swift */,
-				9381886C29C3783E00AB12A2 /* Contact.swift */,
-				9381886829C3761F00AB12A2 /* DictionaryStoryboard.storyboard */,
-				9381886629C36E3700AB12A2 /* SetStoryboard.storyboard */,
-				9381885E29C35FBE00AB12A2 /* ArrayStoryboard.storyboard */,
-				9381886029C3688A00AB12A2 /* MyCollectionViewCell.swift */,
-				9381886129C3688A00AB12A2 /* MyCollectionViewCell.xib */,
-				9356AB9A29B24CE300B7D132 /* Main.storyboard */,
-				9381885829C35E0100AB12A2 /* Manager.swift */,
+				93D9F2CB29C8DF3C0075D3A2 /* Controller */,
+				93D9F2CC29C8DF510075D3A2 /* View */,
+				93D9F2CD29C8DF6E0075D3A2 /* Model */,
 				9356AB9D29B24CE400B7D132 /* Assets.xcassets */,
 				9356AB9F29B24CE400B7D132 /* LaunchScreen.storyboard */,
 				9356ABA229B24CE400B7D132 /* Info.plist */,
@@ -189,6 +179,40 @@
 				9381889329C381C800AB12A2 /* Async_And_Mesure_Tests.swift */,
 			);
 			path = Async_And_Mesure_Tests;
+			sourceTree = "<group>";
+		};
+		93D9F2CB29C8DF3C0075D3A2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9356AB9829B24CE300B7D132 /* ViewController.swift */,
+				9381885A29C35E4B00AB12A2 /* ArrayVC.swift */,
+				9381886429C36DA700AB12A2 /* SetVC.swift */,
+				9381886A29C3763100AB12A2 /* DictionaryVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		93D9F2CC29C8DF510075D3A2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9381886E29C37DDE00AB12A2 /* DictionaryHeader.swift */,
+				9381886029C3688A00AB12A2 /* MyCollectionViewCell.swift */,
+				9381886129C3688A00AB12A2 /* MyCollectionViewCell.xib */,
+				9381886829C3761F00AB12A2 /* DictionaryStoryboard.storyboard */,
+				9381886629C36E3700AB12A2 /* SetStoryboard.storyboard */,
+				9381885E29C35FBE00AB12A2 /* ArrayStoryboard.storyboard */,
+				9356AB9A29B24CE300B7D132 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		93D9F2CD29C8DF6E0075D3A2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9381885829C35E0100AB12A2 /* Manager.swift */,
+				9381886C29C3783E00AB12A2 /* Contact.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

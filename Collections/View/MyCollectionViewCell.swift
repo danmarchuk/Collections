@@ -17,13 +17,9 @@ class MyCollectionViewCell: UICollectionViewCell {
         return UINib(nibName: identifier, bundle: nil)
     }
     
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundColor = .lightGray
         contentView.addSubview(label)
     }
-
-
 }

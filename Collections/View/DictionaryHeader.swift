@@ -33,8 +33,6 @@ class DictionaryHeader: UICollectionReusableView {
             return stackView
         }()
         
-        
-        
         public func configure() {
             backgroundColor = .white
             addSubview(stackView)
@@ -44,6 +42,4 @@ class DictionaryHeader: UICollectionReusableView {
             super.layoutSubviews()
             stackView.frame = bounds
         }
-
-        
 }

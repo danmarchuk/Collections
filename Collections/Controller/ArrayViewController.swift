@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ArrayVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+final class ArrayViewController: UIViewController {
     
     var titleString: String?
     let tasksArr: [String] = ["Insert 1000 elements at the begining of the array one-by-one.", "Insert 1000 elements at the begining of the array.", "Insert 1000 elements in the middle of the array one-by-one.", "Insert 1000 elements in the middle of the array.", "Insert 1000 elements at the end of the array one-by-one.", "Insert 1000 elements at the end of the array.", "Remove 1000 elements at the end of the array one by-one.", "Remove 1000 elements at the end of the array.", "Remove 1000 elements at the beginning of the array one by-one.", "Remove 1000 elements at the beginning of the array.", "Remove 1000 elements in the middle of the array one by-one.", "Remove 1000 elements in the middle of the array."]
@@ -25,59 +25,17 @@ class ArrayVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     override func viewDidLoad() {
         layoutSetup()
         title = titleString
-        
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionView?.frame = view.bounds
     }
-    
-    
-    
-    
-    
-    // MARK: - CollectionView Cells
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return numberOfSections
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0 {
-            return createArr.count
-        } else {
-            return numberOfItems
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyCollectionViewCell.identifier, for: indexPath) as! MyCollectionViewCell
-        cell.label.text = tasksArr[indexPath.row]
-        
-        // add accessibility identifier
-        if indexPath.section == 0 {
-            cell.accessibilityIdentifier = manager.indentificatorForCell(cellNumber: indexPath.row)
-        } else {
-            cell.accessibilityIdentifier = manager.indentificatorForCell(cellNumber: indexPath.row + 1)
-        }
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if indexPath.section == 0 {
-            return section1ItemSize
-        } else {
-            return section2ItemSize
-        }
-    }
-    
-    
-    
+}
 
-    // MARK: - A View was clicked on
+// MARK: - UICollectionViewDelegate
+extension ArrayViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         let cellNumber = indexPath.row
         if let cell = collectionView.cellForItem(at: indexPath) as? MyCollectionViewCell {
             // disable the button while the array is being created
@@ -115,10 +73,50 @@ class ArrayVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
                 }
             }
         }
-        
+    }
+}
+
+// MARK: - UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
+extension ArrayViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return numberOfSections
     }
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if section == 0 {
+            return createArr.count
+        } else {
+            return numberOfItems
+        }
+    }
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView
+            .dequeueReusableCell(withReuseIdentifier: MyCollectionViewCell.identifier, for: indexPath) as? MyCollectionViewCell
+        else {
+            print(fatalError("Fail during dequeueing the cell"))
+        }
+        cell.label.text = tasksArr[indexPath.row]
+        // add accessibility identifier
+        if indexPath.section == 0 {
+            cell.accessibilityIdentifier = manager.indentificatorForCell(cellNumber: indexPath.row)
+        } else {
+            cell.accessibilityIdentifier = manager.indentificatorForCell(cellNumber: indexPath.row + 1)
+        }
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.section == 0 {
+            return section1ItemSize
+        } else {
+            return section2ItemSize
+        }
+    }
+}
+
+// MARK: - Functions
+extension ArrayViewController {
     func performOperation(cellNumber: Int) {
         var copyArr = intArray
         let middleIndex = copyArr.count / 2
@@ -179,9 +177,5 @@ class ArrayVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         collectionView?.backgroundColor = .gray
         view.addSubview(collectionView!)
     }
-    
-    
-    
 }
-
 

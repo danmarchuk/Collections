@@ -7,15 +7,13 @@
 
 import UIKit
 
-class SetVC: UIViewController {
+final class SetViewController: UIViewController {
     
     var manager = Manager()
-    
     var titleString: String?
     
     // TextFields
     @IBOutlet weak var firstTextField: UITextField!
-    
     @IBOutlet weak var secondTextField: UITextField!
     
     // labels
@@ -31,17 +29,14 @@ class SetVC: UIViewController {
         uniqueCharsLabel.isHidden = true
     }
     
-    
     // button 1
     @IBAction func allMatchingLettersButton(_ sender: UIButton) {
         var matchingChars = ""
-        if let firstText = firstTextField.text {
-            if let secondText = secondTextField.text {
-                for char in firstText {
-                    for charTwo in secondText {
-                        if char == charTwo {
-                            matchingChars.append(char)
-                        }
+        if let firstText = firstTextField.text, let secondText = secondTextField.text {
+            for char in firstText {
+                for charTwo in secondText {
+                    if char == charTwo {
+                        matchingChars.append(char)
                     }
                 }
             }
@@ -49,7 +44,7 @@ class SetVC: UIViewController {
         allMatchingLettersLabel.isHidden = false
         allMatchingLettersLabel.text = matchingChars
     }
-
+    
     // button 2
     @IBAction func notMatchedCharactersButton(_ sender: UIButton) {
         var notmatchingChars = ""
@@ -61,20 +56,15 @@ class SetVC: UIViewController {
         notMatchedCharactersLabel.isHidden = false
         notMatchedCharactersLabel.text = notmatchingChars
     }
-
-
     
     @IBAction func uniqueCharsButton(_ sender: UIButton) {
         var notmatchingChars = ""
-        if let firstText = firstTextField.text {
-            if let secondText = secondTextField.text {
-                notmatchingChars = manager.uniqueChars(string1: firstText, string2: secondText)
-            }
+        if let firstText = firstTextField.text, let secondText = secondTextField.text {
+            notmatchingChars = manager.uniqueChars(string1: firstText, string2: secondText)
         }
         uniqueCharsLabel.isHidden = false
         uniqueCharsLabel.text = notmatchingChars
     }
-
 }
 
 

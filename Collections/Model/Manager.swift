@@ -15,9 +15,7 @@ struct Manager {
         return Int.random(in: 10000..<100000)
     }
     
-    
     // MARK: - shared functions
-    
     func showActivityIndicator (sender: UICollectionReusableView) -> UIActivityIndicatorView {
         // Show a loading progress bar inside the button
         let activityIndicator = UIActivityIndicatorView(style: .large)
@@ -38,35 +36,34 @@ struct Manager {
         return roundedTime
     }
 
-
     func indentificatorForCell(cellNumber: Int) -> String {
          switch cellNumber {
          case 0:
-             return "Cell_0"
+             return "Cell_(0)"
          case 1:
-             return "Cell_1"
+             return "Cell_(1)"
          case 2:
-             return "Cell_2"
+             return "Cell_(2)"
          case 3:
-             return "Cell_3"
+             return "Cell_(3)"
          case 4:
-             return "Cell_4"
+             return "Cell_(4)"
          case 5:
-             return "Cell_5"
+             return "Cell_(5)"
          case 6:
-             return "Cell_6"
+             return "Cell_(6)"
          case 7:
-             return "Cell_7"
+             return "Cell_(7)"
          case 8:
-             return "Cell_8"
+             return "Cell_(8)"
          case 9:
-             return "Cell_9"
+             return "Cell_(9)"
          case 10:
-             return "Cell_10"
+             return "Cell_(10)"
          case 11:
-             return "Cell_11"
+             return "Cell_(11)"
          case 12:
-             return "Cell_12"
+             return "Cell_(12)"
          default:
              print("wow")
          }
@@ -74,7 +71,6 @@ struct Manager {
      }
     
     // MARK: - ArrayVC functions
-    
     func textWithTime(cellNumber: Int, time: Double) -> String {
         switch cellNumber {
         case 0:
@@ -89,7 +85,6 @@ struct Manager {
     }
     
     // MARK: - SetVC fucntions
-    
     func unmatchedCharacters(string1: String, string2: String) -> String {
            var unmatchedCharacters: String = ""
            let minLength = min(string1.count, string2.count)
@@ -102,7 +97,6 @@ struct Manager {
                    unmatchedCharacters.append(char2)
                }
            }
-           
            let remainingChars1 = string1.dropFirst(minLength)
            let remainingChars2 = string2.dropFirst(minLength)
            unmatchedCharacters.append(contentsOf: remainingChars1)
@@ -110,21 +104,16 @@ struct Manager {
            return unmatchedCharacters
        }
        
-       
        func uniqueChars(string1: String, string2: String) -> String {
-
            var nonMatchingChars = ""
-
            for (index, char) in string1.enumerated() {
                if index >= string2.count || char != string2[string2.index(string2.startIndex, offsetBy: index)] {
                    nonMatchingChars.append(char)
                }
            }
-
            if string2.count > string1.count {
                nonMatchingChars.append(String(string2[string2.index(string2.startIndex, offsetBy: string1.count)...]))
            }
-
            return nonMatchingChars
        }
 
@@ -141,7 +130,6 @@ struct Manager {
            default:
                return "Error"
            }
-           
        }
        
        func addContactsToArray() -> Array<Contact> {
@@ -163,8 +151,4 @@ struct Manager {
            }
            return contactDict
        }
-
-
-    
-
 }

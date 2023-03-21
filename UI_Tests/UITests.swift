@@ -7,7 +7,7 @@
 
 import XCTest
 
-final class UI_Tests: XCTestCase {
+final class UITests: XCTestCase {
 
     override func setUpWithError() throws {
             // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -16,10 +16,6 @@ final class UI_Tests: XCTestCase {
             continueAfterFailure = false
 
             // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-        }
-
-        override func tearDownWithError() throws {
-            // Put teardown code here. This method is called after the invocation of each test method in the class.
         }
 
         func testExample() throws {
@@ -33,54 +29,54 @@ final class UI_Tests: XCTestCase {
 
             let collectionViewsQuery = app.collectionViews
             
-            let cell_0 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_0")
+            let cell_0 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_(0)")
             XCTAssertTrue(cell_0.exists)
             cell_0.tap()
             
-            let cell_1_expectation = expectation(for: NSPredicate(format: "exists == true"), evaluatedWith: collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_1"), handler: nil)
+            let cell_1_expectation = expectation(for: NSPredicate(format: "exists == true"), evaluatedWith: collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_(1)"), handler: nil)
             wait(for: [cell_1_expectation], timeout: 5)
             
-            let cell_1 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_1")
+            let cell_1 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_(1)")
             XCTAssertTrue(cell_1.exists)
             cell_1.tap()
             
-            let cell_2 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_2")
+            let cell_2 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_(2)")
             XCTAssertTrue(cell_2.exists)
             cell_2.tap()
             
-            let cell_3 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_3")
+            let cell_3 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_(3)")
             XCTAssertTrue(cell_3.exists)
             cell_3.tap()
             
-            let cell_4 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_4")
+            let cell_4 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_(4)")
             XCTAssertTrue(cell_4.exists)
             cell_4.tap()
             
-            let cell_5 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_5")
+            let cell_5 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_(5)")
             XCTAssertTrue(cell_5.exists)
             cell_5.tap()
             
-            let cell_6 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_6")
+            let cell_6 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_(6)")
             XCTAssertTrue(cell_6.exists)
             cell_6.tap()
             
-            let cell_7 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_7")
+            let cell_7 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_(7)")
             XCTAssertTrue(cell_7.exists)
             cell_7.tap()
             
-            let cell_8 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_8")
+            let cell_8 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_(8)")
             XCTAssertTrue(cell_8.exists)
             cell_8.tap()
             
-            let cell_9 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_9")
+            let cell_9 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_(9)")
             XCTAssertTrue(cell_9.exists)
             cell_9.tap()
             
-            let cell_10 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_10")
+            let cell_10 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_(10)")
             XCTAssertTrue(cell_10.exists)
             cell_10.tap()
             
-            let cell_11 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_11")
+            let cell_11 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_(11)")
             XCTAssertTrue(cell_11.exists)
             cell_11.tap()
             
@@ -133,27 +129,27 @@ final class UI_Tests: XCTestCase {
             let dict = app.staticTexts["Dictionary"]
             dict.tap()
             
-            let cell_00 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_0")
+            let cell_00 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_(0)")
             XCTAssertTrue(cell_00.exists)
             cell_00.tap()
             
-            let cell_01 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_1")
+            let cell_01 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_(1)")
             XCTAssertTrue(cell_01.exists)
             cell_01.tap()
             
-            let cell_02 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_2")
+            let cell_02 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_(2)")
             XCTAssertTrue(cell_02.exists)
             cell_02.tap()
             
-            let cell_03 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_3")
+            let cell_03 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_(3)")
             XCTAssertTrue(cell_03.exists)
             cell_03.tap()
             
-            let cell_04 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_4")
+            let cell_04 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_(4)")
             XCTAssertTrue(cell_04.exists)
             cell_04.tap()
             
-            let cell_05 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_5")
+            let cell_05 = collectionViewsQuery.cells.element(matching: .cell, identifier: "Cell_(5)")
             XCTAssertTrue(cell_05.exists)
             cell_05.tap()
         

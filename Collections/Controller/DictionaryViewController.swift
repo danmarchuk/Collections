@@ -8,8 +8,8 @@
 import Foundation
 import UIKit
 
-class DictionaryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
+final class DictionaryViewController: UIViewController {
+    
     var titleString: String?
     let dictTasksArr: [String] = ["Find the first contact", "Find the first contact", "Find the last contact", "Find the last contact", "Search for a non-existing element", "Search for a non-existing element"]
     var contactArray: [Contact] = []
@@ -20,12 +20,7 @@ class DictionaryVC: UIViewController, UICollectionViewDelegate, UICollectionView
     override func viewDidLoad() {
         super.viewDidLoad()
         title = titleString
-        
-        // Do any additional setup after loading the view.
-        DispatchQueue.global(qos: .background).async {
-            self.contactArray = self.manager.addContactsToArray()
-            self.contactDict = self.manager.addContactstoDict()
-        }
+        createArrayAndDict()
         layoutSetup()
     }
     
@@ -33,7 +28,10 @@ class DictionaryVC: UIViewController, UICollectionViewDelegate, UICollectionView
         super.viewDidLayoutSubviews()
         collectionView?.frame = view.bounds
     }
-    
+}
+
+// MARK: - UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
+extension DictionaryViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         dictTasksArr.count
     }
@@ -45,27 +43,10 @@ class DictionaryVC: UIViewController, UICollectionViewDelegate, UICollectionView
         cell.accessibilityIdentifier = manager.indentificatorForCell(cellNumber: indexPath.row)
         return cell
     }
-    
-    // MARK: - CollectionView Header
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
-                                                                     withReuseIdentifier: DictionaryHeader.identifier,
-                                                                     for: indexPath) as! DictionaryHeader
+}
 
-        header.configure()
-        header.isUserInteractionEnabled = true
-        return header
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.size.width, height: 75)
-    }
-    
-    
-    
-    // MARK: - A View was clicked on
-    
+// MARK: - UICollectionViewDelegate
+extension DictionaryViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         var elementNumber = 0
         let cellNumber = indexPath.row
@@ -92,11 +73,31 @@ class DictionaryVC: UIViewController, UICollectionViewDelegate, UICollectionView
                     cell.isUserInteractionEnabled = true
                 }
             }
-            
         }
-        
+    }
+}
+
+// MARK: - Configure the Header
+extension DictionaryViewController {
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
+                                                                     withReuseIdentifier: DictionaryHeader.identifier,
+                                                                     for: indexPath) as? DictionaryHeader
+        else {
+            print(fatalError("Fail during dequeueing the header"))
+        }
+        header.configure()
+        header.isUserInteractionEnabled = true
+        return header
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: view.frame.size.width, height: 75)
+    }
+}
+
+// MARK: - DictionaryViewController functions
+extension DictionaryViewController {
     func performOperation(cellNumber: Int) -> Int {
         let copyArr = contactArray
         let copyDict = contactDict
@@ -152,9 +153,17 @@ class DictionaryVC: UIViewController, UICollectionViewDelegate, UICollectionView
         collectionView?.backgroundColor = .gray
         view.addSubview(collectionView!)
     }
-
+    func createArrayAndDict() {
+        DispatchQueue.global(qos: .background).async {
+            self.contactArray = self.manager.addContactsToArray()
+            self.contactDict = self.manager.addContactstoDict()
+        }
+    }
+    
 }
 
-    
-    
+
+
+
+
 

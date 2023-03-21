@@ -7,7 +7,7 @@
 
 import XCTest
 
-final class Collections_Unit_Tests: XCTestCase {
+final class ManagerUnitTests: XCTestCase {
     
     let manager = Manager()
     

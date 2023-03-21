@@ -12,13 +12,9 @@ final class Async_And_Mesure_Tests: XCTestCase {
     let manager = Manager()
     let contact = Contact.self
 
-    
     func test_async_addContactsToArray() {
-        
         let exp = expectation(description: "The contacts were added to the array")
-        
         var arr: [Contact] = []
-        
         DispatchQueue.main.async {
             arr = self.manager.addContactsToArray()
             XCTAssertNotNil(arr)
@@ -28,13 +24,9 @@ final class Async_And_Mesure_Tests: XCTestCase {
         wait(for: [exp], timeout: 10.0)
     }
     
-    
     func test_async_addContactsToDict() {
-        
         let exp = expectation(description: "The contacts were added to the dictionary")
-        
         var dict: [String:String] = [:]
-        
         DispatchQueue.main.async {
             dict = self.manager.addContactstoDict()
             XCTAssertNotNil(dict)
@@ -44,8 +36,6 @@ final class Async_And_Mesure_Tests: XCTestCase {
         wait(for: [exp], timeout: 10.0)
     }
     
-    
-    
     func test_measure_addContactsToArray() {
         var arr: [Contact] = []
         measure {
@@ -53,13 +43,11 @@ final class Async_And_Mesure_Tests: XCTestCase {
         }
     }
     
-    
     func test_measure_addContactsToDictionary() {
         var dict: [String:String] = [:]
         measure {
             dict = manager.addContactstoDict()
         }
     }
-
 }
 

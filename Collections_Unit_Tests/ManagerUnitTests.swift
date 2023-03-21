@@ -18,7 +18,6 @@ final class ManagerUnitTests: XCTestCase {
         XCTAssertEqual(textWithTime, expectedResult)
     }
     
-    
     func test_should_fail_textWithTime_function_case0() {
         let textWithTime =  manager.textWithTime(cellNumber: 0, time: 12.12345)
         print(textWithTime)
@@ -54,14 +53,12 @@ final class ManagerUnitTests: XCTestCase {
         let unmatchedCharacters = manager.unmatchedCharacters(string1: "12345", string2: "12")
         let expectedResult = "345"
         XCTAssertEqual(unmatchedCharacters, expectedResult)
-        
     }
     
     func test_should_fail_unmatchedCharacters() {
         let unmatchedCharacters = manager.unmatchedCharacters(string1: "12345", string2: "12")
         let expectedResult = "3455"
         XCTAssertEqual(unmatchedCharacters, expectedResult)
-        
     }
     
     func test_uniqueChars() {
@@ -112,7 +109,6 @@ final class ManagerUnitTests: XCTestCase {
         XCTAssertEqual(dictTextWithTime, expectedResult)
     }
     
-    
     func test_calculateExecutionTime() {
         let executionTime = manager.calculateExecutionTime(end: DispatchTime(uptimeNanoseconds: 9000000000000), start: DispatchTime(uptimeNanoseconds: 1000000000000))
         let expectedResult = 8000.0
@@ -124,9 +120,6 @@ final class ManagerUnitTests: XCTestCase {
         let expectedResult = 98000.0
         XCTAssertEqual(executionTime, expectedResult)
     }
-    
-
-
 }
 
 

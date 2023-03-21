@@ -159,7 +159,6 @@ extension DictionaryViewController {
             self.contactDict = self.manager.addContactstoDict()
         }
     }
-    
 }
 
 
